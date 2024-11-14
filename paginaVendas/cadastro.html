@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="headerSection">
+        <article class="busca">
+            <input type="text" id="buscar">
+        </article>
+        <article class="categorias">
+            <a href="categorias.html" class="navegacao">Categorias</a>
+            <a href="index.html" class="navegacao">Oferta do dia</a>
+            <a href="historico.html" class="navegacao">Historico</a>
+            <a href="moda.html" class="navegacao">Moda</a>
+            <a href="cadastro.html" class="navegacao">Cadastro</a>
+        </article>
+    </section>
+    <section class="formulario">
+        <form action="">
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" id="nome">
+            <label for="email">Email:</label>
+            <input type="text" name="email" id="email">
+            <label for="senha">Senha:</label>
+            <input type="text" name="senha" id="senha">
+            <label for="repetir">Repita a senha:</label>
+            <input type="text" name="repetir" id="repetir">
+            <label for="sexo">Sexo:</label>
+            <select name="sexo" id="sexo">
+                <option selected disabled value="">selecione seu sexo</option>
+                <option value="masculino">Masculino</option>
+                <option value="feminino">Femenino</option>
+                <option value="outro">outro</option>
+            </select>
+        </form>
+    </section>
+</body>
+</html>
