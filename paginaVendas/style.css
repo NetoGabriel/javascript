@@ -84,7 +84,7 @@ height: auto;}
     text-align: center;
 }
 
-.marketItem{
+.marketItens > .marketItem{
     height: 300px;
     width: 15vw;
     float: left;
