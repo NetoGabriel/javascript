@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Localidade</h1>
+    <input type="text" name="loc" id="loc">
+    <input type="button" value="Verificar" onclick="veve()">
+    <div id="res"></div>
+
+    <script>
+        function veve(){
+        var loc1 = window.document.getElementById("loc")
+        var res = window.document.querySelector("div#res")
+        var local = (loc1.value)
+            res.innerHTML = `<p>Voce mora no ${local}</p>`
+        if(local != 'Brasil'){
+            res.innerHTML += `<p>Voce e estrangeiro</p>`
+        }else{
+            res.innerHTML += `<p>Voce e brasileiro</p>`
+        }
+    }
+    </script>
+</html>
