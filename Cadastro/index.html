@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Formulario</title>
+    
+</head>
+<body>
+    <section class="cadastroLoja">
+        <form id="form" method="post" action="http:api.dodev.com.br/submeterdados">
+            <fieldset id="campo">
+                <div class="informação">
+                    <label for="nome">Nome:</label>
+                    <input type="text" name="nome" id="nome">
+                </div>
+                <div class="informação">
+                    <label for="endereço">Endereço:</label>
+                    <input type="text" name="endereço" id="endereço">
+                </div>
+                <div class="informação">
+                    <label for="DiaDaSemana">Dias da semana que esta aberto:</label>
+                    <select name="DiaDaSemana" id="DiaDaSemana">
+                        <option value="segunda">Segunda</option>
+                        <option value="terça">Terça</option>
+                        <option value="quarta">Quarta</option>
+                        <option value="quinta">Quinta</option>
+                        <option value="Sexta">Sexta</option>
+                        <option value="sabado">Sabado</option>
+                        <option value="domingo">Domingo</option>
+                    </select>
+                </div>
+                <div class="horarios">
+                    <label>Horario de abertura:</label>
+                    <input type="time" name="Abertura" id="abertura">
+                </div>
+                <div class="horarios">
+                    <label>Horario de fechamento:</label>
+                    <input type="time" name="fechamento" id="fechamento">
+                </div>
+                <div>
+                    <input type="submit" value="enviar">
+                </div>
+            </fieldset>
+        </form>
+    </section>
+    <script src="index.js"></script>
+</body>
+</html>
