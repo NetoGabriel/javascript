@@ -14,13 +14,13 @@ class Roupas{
     }
 }
 
-const roupas1 = new Roupas(`Camiseta preta`, 100 , [`./imagens/img_camiseta1.jpg`, `./imagens/img_camiseta1_foto_2.jpg`, `./imagens/img_camiseta1_foto_3.jpg`, `/imagens/img_camiseta1_foto_1.jpg`], 1)
+const roupas1 = new Roupas(`Camiseta preta`, 100 , [`./imagens/img_camiseta1.jpg`, `./imagens/img_camiseta1-2.jpg`, `./imagens/img_camiseta1-3.jpg`, `/imagens/img_camiseta1-1.jpg`], 1)
 
-const roupas2 = new Roupas(`Moleton Branco` , 90 , [`./imagens/img_camisa_manga_longa.jpg` , `./imagens/img_camisa_manga_longa foto 1.jpg` , `./imagens/img_camisa_manga_longa foto 2.jpg` , `./imagens/img_camisa_manga_longa foto3.jpg`] , 2)
+const roupas2 = new Roupas(`Moleton Branco` , 90 , [`./imagens/img_camisa_manga_longa.jpg` , `./imagens/img_camisa_manga_longa-2.jpg` , `./imagens/img_camisa_manga_longa-3.jpg` , `./imagens/img_camisa_manga_longa.jpg`] , 2)
 
-const roupas3 = new Roupas(`Camiseta Basica`, 110 ,[`./imagens/img_camisa2jpg.jpg` , `./imagens/img_camisa2jpg foto 1.jpg` , `./imagens/img_camisa2jpg foto 2.jpg` , `./imagens/img_camisa2jpg foto 3.jpg`] , 3)
+const roupas3 = new Roupas(`Camiseta Basica`, 110 ,[`./imagens/img_camisa2.jpg` , `./imagens/img_camisa2-2.jpg` , `./imagens/img_camisa2-3.jpg` , `./imagens/img_camisa2.jpg`] , 3)
 
-const roupas4 = new Roupas(`Moleton preto` , 110 , [`./imagens/img_Moleton.jpg`,`./imagens/img_Moleton foto 1.jpg`,`./imagens/img_Moleton foto 2.jpg` , `./imagens/img_Moleton foto 3.jpg`] , 4)
+const roupas4 = new Roupas(`Moleton preto` , 110 , [`./imagens/img_Moleton.jpg`,`./imagens/img_Moleton-2.jpg`,`./imagens/img_Moleton-3.jpg` , `./imagens/img_Moleton.jpg`] , 4)
 
 //==================================
 
