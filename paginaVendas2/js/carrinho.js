@@ -56,47 +56,78 @@ window.addEventListener('load', e =>{
 
 
 
-        let nome = document.createElement('span');
+        nome = document.createElement('span');
         nome.innerText = produto.nome;
         nome.style.width = '400px'
         nome.style.marginRight = '2vw'
 
+        let qtd = document.createElement('span');
+        qtd.innerText = `${produto.quantidade}x`;
+        qtd.style.marginRight = '12vw'
+
+        let preco = document.createElement('span');
+        preco.style.margin = '40px'
+        preco.marginRight = '6vw'
+        preco.innerText = `${valor}`;
+
+        text.appendChild(img);
+        text.appendChild(nome);
+        text.appendChild(qtd);
+        text.appendChild(preco);
 
 
+        carrinhoDiv.appendChild(text);
+
+        total += Number(valor)
+
+        let totalDiv = document.getElementById("total")
+        totalDiv.innerHTML = `Total a Pagar: ${total}`
+        totalDiv.style.marginTop ='5vh'
+        totalDiv.style,marginBottom = '5vh'
+        totalDiv.style.fontSize = '1.5em'
+
+        window.localStorage.setItem("local", total)
+
+    }
+    if(vazio){
+        carrinhoDiv.innerHTML = 'Carrinho Vazio'
+        carrinhoDiv.style.fontSize = '1.5em'
+    }
+    if(!vazio){
+        let apagarCarrinho = document.getElementById('apagar')
+        let apagar = document.createElement('button')
+
+        mexer = document.getElementById("divApagar")
+        mexer.style.display = 'flex'
+        mexer.style.justifyContent = 'center'
+        mexer.style.marginBottom = '30px'
+
+        apagar.innerHTML = 'Limpar Carrinho'
+        apagarCarrinho.appendChild(apagar)
+        apagar.style.padding = '10px'
+        apagar.style.backgroundColor = 'white'
+        apagar.style.color = 'red'
+        apagar.style.border = 'solid 1px red'
 
 
+        apagar.addEventListener('mouseover', function(){
+            apagar.style.transitionDuration = '0.5s'
+            apagar.style.borderRadius = '10px'
+            apagar.style.cursor = 'pointer'
+        })
+        
+        apagar.addEventListener('mouseout', function(){
+            apagar.style.transitionDuration = '0.5s'
+            apagar.style.borderRadius = '0px'
+            apagar.style.cursor = 'default'
+        })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        apagar.addEventListener('click', e =>{
+            document.getElementById('carrinho').remove()
+            let totalDiv = document.getElementById('total')
+            totalDiv.innerHTML = ''
+            window.localStorage.setItem('array',JSON.stringify([]))
+        })
 
     }
 
