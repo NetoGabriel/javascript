@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+*{margin: 0px;
+padding: 0px;}
+
+.navBar{
+    display: flex;
+    justify-content: center;
+}
+
+.navItens{
+    margin: 10px;
+    padding: 10px;
+    float: left;
+}
+
+h1{
+    font-size: 40px;
+    padding: 20px;
+    text-align: center;
+}
+
