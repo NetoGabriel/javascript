@@ -1,22 +1,117 @@
 @charset "UTF-8";
 
-*{margin: 0px;
-padding: 0px;}
+*{ 
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
+
 
 .navBar{
     display: flex;
     justify-content: center;
+    background-color: rgba(0, 0, 0, 0.84);
+
 }
+
 
 .navItens{
     margin: 10px;
     padding: 10px;
-    float: left;
+    background-color: rgba(0, 0, 0, 0.234);
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
 }
 
-h1{
-    font-size: 40px;
+.navItens > a{
+    font-size: 1em;
+    color: white;
+}
+
+
+.fotprincipal{
+    text-align: center;
+}
+
+.fotprincipal > h1{
+    font-size: 80px;
     padding: 20px;
     text-align: center;
 }
 
+
+.fotprincipal > img{
+    width: 420px;
+    height: 300px;
+    border-radius: 10px; /* Arredonda os cantos (opcional) */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra (opcional) */
+    object-fit: cover;
+    transition: transform 0.5s ease, box-shadow 0.5s ease; /* Suaviza o efeito */
+    transform-style: preserve-3d; /* Mantém o efeito 3D */
+    
+}
+
+
+/*.fotprincipal img:hover {
+    transform: rotateY(20deg) rotateX(10deg); /* Rotação em 3D */
+/*    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3); /* Sombra para profundidade }*/
+
+section {
+   text-align: center;
+}
+h1{
+    font-size: 50px;
+
+}
+ h2{
+    font-size: 30px;   
+    padding: 10px;
+    text-align: center;
+}
+
+.fot {
+    display: inline-block; /* Alinha os itens horizontalmente */
+    margin: 10px; /* Espaçamento entre imagens */
+}
+
+.fot img {
+    width: 300px; /* Ajusta o tamanho da imagem */
+    height: 200px; /* Mantém a proporção da imagem */
+    border-radius: 10px; /* Arredonda os cantos (opcional) */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra (opcional) */
+    object-fit: cover;
+    transition: transform 0.5s ease, box-shadow 0.5s ease; /* Suaviza o efeito */
+    transform-style: preserve-3d; /* Mantém o efeito 3D */
+}
+
+
+.fot img:hover {
+    transform: rotateY(20deg) rotateX(10deg); /* Rotação em 3D */
+ /*   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3); /* Sombra para profundidade */
+}
+
+/* Exibição no Mobile */
+@media (max-width: 400px)  {
+        #burguer {
+            display: block; /* Exibe o botão hambúrguer */
+        }
+
+        .navItens {
+            display: none; /* Esconde os itens por padrão */
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background-color: #444;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .navItens.open {
+            display: flex; /* Exibe os itens ao clicar no hambúrguer */
+        }
+}
