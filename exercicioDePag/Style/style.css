@@ -5,17 +5,23 @@
     padding: 0px;
 }
 
-
+body{
+    background-color: rgba(0, 0, 0, 0.92);
+}
 
 
 
 .navBar{
     display: flex;
     justify-content: center;
-    background-color: rgba(0, 0, 0, 0.84);
+    background-color: rgba(25, 25, 25, 0.853);
 
 }
 
+#burguer{
+    display: none;
+    color: white;
+}
 
 .navItens{
     margin: 10px;
@@ -64,12 +70,13 @@ section {
 }
 h1{
     font-size: 50px;
-
+    color: white;
 }
  h2{
     font-size: 30px;   
     padding: 10px;
     text-align: center;
+    color:white;
 }
 
 .fot {
@@ -91,27 +98,4 @@ h1{
 .fot img:hover {
     transform: rotateY(20deg) rotateX(10deg); /* Rotação em 3D */
  /*   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3); /* Sombra para profundidade */
-}
-
-/* Exibição no Mobile */
-@media (max-width: 400px)  {
-        #burguer {
-            display: block; /* Exibe o botão hambúrguer */
-        }
-
-        .navItens {
-            display: none; /* Esconde os itens por padrão */
-            flex-direction: column;
-            position: absolute;
-            top: 60px;
-            right: 20px;
-            background-color: #444;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-        }
-
-        .navItens.open {
-            display: flex; /* Exibe os itens ao clicar no hambúrguer */
-        }
 }

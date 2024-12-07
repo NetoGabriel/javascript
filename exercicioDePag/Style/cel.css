@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+
+/* Exibição no Mobile */
+
+    #burguer {
+        display: block; /* Exibe o botão hambúrguer */
+        color: white;
+    }
+
+    .navItens {
+        display: none; /* Esconde os itens por padrão */
+        flex-direction: column;
+        position: absolute;
+        background-color: #444;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .navItens.open {
+        display: flex; /* Exibe os itens ao clicar no hambúrguer */
+    }
