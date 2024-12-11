@@ -14,15 +14,28 @@ body{
 .navBar{
     display: flex;
     justify-content: center;
+    position: relative;
     background-color: rgba(25, 25, 25, 0.853);
 
 }
 
 #burguer{
-    display: none;
+    
     color: white;
+    cursor: pointer;
 }
 
+#carrinho{
+    color: white;
+    position: absolute; left:97%;
+    cursor: pointer;
+}
+
+#calcular{
+    color: white;
+    position: absolute;top: 150px; left: 70%; 
+    padding: 30px;
+}
 .navItens{
     margin: 10px;
     padding: 10px;

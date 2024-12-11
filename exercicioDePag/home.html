@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="Style/style.css">
     <link rel="stylesheet" media="screen and (max-width:400px)" href="Style/cel.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
     <title>Home</title>
 </head>
 <body>
@@ -18,6 +19,7 @@
             <div class="navItens">
                 <a href="sobreNos.html">Sobre Nos</a>
             </div>
+            <span id="carrinho" class="material-symbols-outlined">shopping_cart_checkout</span>
         </nav>
             <section>
                 <h1>
@@ -25,6 +27,13 @@
                 </h1>
                 <div class="fotprincipal">
                     <img src="imagens/img_camiseta1 - 2.jpg" alt="Camiset3">
+                </div>
+                <div id="calcular">
+                    <h2>Camiseta preta</h2>
+                    <p>R$129,90</p><br>
+                    <label for="quantidade">Quantidade</label><br>
+                    <input type="number" name="quantidade" id="iquantidade"><br>
+                    <button onclick="adccarro()">adicionar o carrinho</button>
                 </div>
             </section>
     </section>
