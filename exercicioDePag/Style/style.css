@@ -41,17 +41,17 @@ header{
     cursor: pointer;
 }
 
-#modal-1{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-}
+
 
 .principais{
     background-color: cadetblue;
     text-align: center;
 
+}
+.principais > img{
+    border: 2px solid black;
+    border-radius: 10px 10px;
+    box-shadow: 10px 10px solid white;
 }
 .principais > div{
      position: absolute; top: 40%; left: 85%; transform: translate(-75%, -75%);
