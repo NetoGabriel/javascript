@@ -6,45 +6,80 @@
 }
 
 body{
+    height: 100%;
+    width: 100%;
+}
+
+header{
     display: flex;
     justify-content: center;
-    position: relative;
+    background-color: aqua;
 }
 
 .navBar{
+    width:100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: yellowgreen;
-    position: relative;
+    margin: 10px;
+    background-color: blueviolet;
     
-    height: 50px;
-    width: 100%;
 }
 .navItens{
     display: flex;
+    margin: 5px;
+    padding: 10px;
+    background-color: chartreuse;
+    border: 1px solid black;
+    cursor: pointer;
+}
+#carrinho{
+    background-color:brown;
+    display: flex;
+    padding: 15px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+#modal-1{
+    display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
-    position:relative;
-    float: left;
+    
 }
 
-.carrinho {
-    display: flex; 
-    justify-content: flex-start; 
-    align-items: center; }
+.principais{
+    background-color: cadetblue;
+    text-align: center;
 
-button {
-    display: flex; /* Para alinhar o ícone dentro do botão */
-    align-items: center; /* Centraliza verticalmente o ícone */
-    border: none; /* Remove borda padrão */
-    background-color: #f0f0f0; /* Cor de fundo opcional */
-    padding: 10px; /* Ajusta o tamanho do botão */
-    cursor: pointer; /* Adiciona um ponteiro ao passar o mouse */
-    border-radius: 5px; /* Bordas arredondadas */
+}
+.principais > div{
+     position: absolute; top: 40%; left: 85%; transform: translate(-75%, -75%);
 }
 
-.material-symbols-outlined {
-    font-size: 24px; /* Ajusta o tamanho do ícone */
+div > h1{
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.modelos{
+    display: flex;
+    width: 99%;
+    flex-direction:  row;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border: 1px solid black;
+    background-color: chartreuse;
+   
+}
+.modelos > div{
+    margin: 5px;
+    border: 1px solid black;
+}
+
+img{
+    height: 300px;
+    width: 300px;
+    
 }
