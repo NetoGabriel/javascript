@@ -24,6 +24,28 @@
                 </span>
             </button>
             <dialog id="modal-1">
+                <section >
+                    <h1>Seu carrinho de compras</h1>
+                    <div>
+                        <h2>
+                            produtos
+                        </h2>
+                        <h2>preço</h2>
+                        <h2>Quantidade</h2>
+                        <h2>total</h2>
+                    </div>
+                    <div>
+                        <img src="imagens/img_camiseta1 - 2.jpg" alt="">
+                        <div>
+                            <h1>Camisa preta</h1>
+                            <p>R$129,90</p>
+                            <label for="iroupas">Quantidades</label><br>
+                            <input type="number" name="roupas" id="iroupas"><br>
+                            <input type="button" value="Adicionar ao carinho">
+                        </div>
+                    </div>
+                </section>
+
                 <button class="close-modal" data-modal="modal-1">
                     x
                 </button>
@@ -68,6 +90,13 @@
             <input type="button" value="Adicionar ao carinho">
         </div>
     </section>
+    <form class="dados">
+        <label for="iemail">Digite seu email</label><br>
+        <input type="email" name="email" id="iemail" required><br>
+        <label for="itelefone">Digite seu telefone</label><br>
+        <input type="tel" name="telefone" id="itelefone" minlength="11"required> 
+        <input type="submit" value="Enviar">
+    </form>
 <script src="carrinho.js"></script>
 </body>
 </html>
