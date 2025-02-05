@@ -3,100 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Style/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
     <title>Home</title>
 </head>
 <body>
-    <header>
-        <nav class="navBar">
-            <div class="navItens">
-                <a href="home.html">Home</a>
-            </div>
-            <div class="navItens">
-                <a href="sobreNos.html">Sobre nos</a>
+    <div class="home">
+        <nav>
+            <ul class="nav-itens">
+                <li>
+                    <a href="home.html" class="menu">Home</a>
+                </li>
+                <li>
+                    <a href="sobreNos.html" class="menu">Sobre Nós</a>
+                </li>
+            </ul>
+            <div class="btn">
+                <a href="carrinho.html"><span class="material-symbols-outlined">shopping_cart_checkout
+                </span id="imgC"></i></a>
             </div>
         </nav>
-        <div id="carrinho">
-            <button class="open-modal" data-modal="modal-1">
-                <span class="material-symbols-outlined">
-                    shopping_cart_checkout
-                </span>
-            </button>
-            <dialog id="modal-1">
-                <section >
-                    <h1>Seu carrinho de compras</h1>
-                    <div>
-                        <h2>
-                            produtos
-                        </h2>
-                        <h2>preço</h2>
-                        <h2>Quantidade</h2>
-                        <h2>total</h2>
-                    </div>
-                    <div>
-                        <img src="imagens/img_camiseta1 - 2.jpg" alt="">
-                        <div>
-                            <h1>Camisa preta</h1>
-                            <p>R$129,90</p>
-                            <label for="iroupas">Quantidades</label><br>
-                            <input type="number" name="roupas" id="iroupas"><br>
-                            <input type="button" value="Adicionar ao carinho">
-                        </div>
-                    </div>
-                </section>
-
-                <button class="close-modal" data-modal="modal-1">
-                    x
-                </button>
-            </dialog>
-    </header>
-    <section class="principais">
-        <img src="imagens/img_camiseta1 - 2.jpg" alt="">
-        <div>
-            <h1>Camisa preta</h1>
-            <p>R$129,90</p>
-            <label for="iroupas">Quantidades</label><br>
-            <input type="number" name="roupas" id="iroupas"><br>
-            <input type="button" value="Adicionar ao carinho">
+        <section>
+            <div class="apresentação">
+                <h1>Seu armario</h1>
+                <p>Navegue e se inspire na moda.</p>
+            </div>
+        </section>
+        <section>
+            <div class="imgPrincipal">
+                <img id="imgbtn" src="imagens/img_camisa2 - 2.jpg" alt="">
+                <p id="camisetaPreta">Camiseta Preta</p>
+            </div>
+        </section>
+        <div class="modelos">
+            <h2>Principais Modelos.</h2>
         </div>
-    </section>
-    <div>
-        <h1>Principais Modelos</h1>
+        <section class="cards">
+            <div class="slots">
+                <div class="img-container">
+                    <img src="imagens/img_camisa_manga_longa - 3.jpg" alt="moleton branco" id="imagem1">
+                </div>
+                <h4 id="moleton">Moleton Branco</h4>
+                <div class="botoes">
+                    <button class="comprar" id="btn2"><a>Comprar</a></button>
+                </div>
+            </div>
+            <div class="slots">
+                <div class="img-container">
+                    <img src="imagens/img_camiseta - 3.jpg" alt="Calça jeans" id="imagem2">
+                </div>
+                <h4 id="Calça">Calça Jeans</h4>
+                <div class="botoes">
+                    <button class="comprar" id="btn3"><a>Comprar</a></button>
+                </div>
+            </div>
+            <div class="slots">
+                <div class="img-container">
+                    <img src="imagens/img_Moleton - 2.jpg" alt="moleton preto" id="imagem3">
+                </div>
+                <h4 id="moletonpreto">Moleton Preto</h4>
+                <div class="botoes">
+                    <button class="comprar" id="btn2"><a>Comprar</a></button>
+                </div>
+            </div>
+        </section>
     </div>
-    <section class="modelos">
-        <div >
-            <img src="imagens/img_camisa_manga_longa - 3.jpg" alt="">
-            <h1>Camisa manga longa</h1>
-            <p>R$179,90</p>
-            <label for="iroupas">Quantidades</label><br>
-            <input type="number" name="roupas" id="iroupas"><br>
-            <input type="button" value="Adicionar ao carinho">
-        </div>
-        <div >
-            <img src="imagens/img_Moleton - 2.jpg" alt="">
-            <h1>Camisa manga preta</h1>
-            <p>R$179,90</p>
-            <label for="iroupas">Quantidades</label><br>
-            <input type="number" name="roupas" id="iroupas"><br>
-            <input type="button" value="Adicionar ao carinho">
-        </div>
-        <div >
-            <img src="imagens/img_camisa2 - 2.jpg" alt="">
-            <h1>Conjunto completo</h1>
-            <p>R$229,90</p>
-            <label for="iroupas">Quantidades</label><br>
-            <input type="number" name="roupas" id="iroupas"><br>
-            <input type="button" value="Adicionar ao carinho">
-        </div>
+    <h2 class="promo">Receba Promoções</h2>
+    <section class="formulario">
+
+        <form action="contato" class="contato" id="contato">
+            <div class="row">
+                <input type="text" name="nome" id="inome" placeholder="Nome" required minlength="3" maxlength="50">
+                <input type="email" name="email" id="iemail" placeholder="Email" required>
+            </div>
+            <div class="row">
+                <input type="tel" name="telefone" id="itelefone" placeholder="Telefone" required maxlength="15" minlength="9">
+                <input type="submit" value="Enviar">
+            </div>
+        </form>
     </section>
-    <form class="dados">
-        <label for="iemail">Digite seu email</label><br>
-        <input type="email" name="email" id="iemail" required><br>
-        <label for="itelefone">Digite seu telefone</label><br>
-        <input type="tel" name="telefone" id="itelefone" minlength="11"required> 
-        <input type="submit" value="Enviar">
-    </form>
-<script src="carrinho.js"></script>
+    <script src="./js/home.js"></script>
 </body>
 </html>
