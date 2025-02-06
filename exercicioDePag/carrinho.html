@@ -8,22 +8,44 @@
     <title>Carrinho</title>
 </head>
 <body>
+    <ul class="nav-itens">
+        <li>
+            <a href="home.html" class="menu">Home</a>
+        </li>
+        <li>
+            <a href="sobreNos.html" class="menu">Sobre Nós</a>
+        </li>
+    </ul>
+    <div class="conteudo">
+        <div class="titulo">Seu carrinho</div>
+        <div class="tabela">
+            <span>Foto</span>
+            <span>Produto</span>
+            <span>Quantidade</span>
+            <span>Total</span>
+        </div>
+        <div class="inf">
+            <div id="carrinho"></div>
+            <div class="inf">
+                <div id="Produto">
+                    <h1></h1>
+            </div>
+            </div>
+        </div>
+        <div class="inf">
+            <div id="preco">
+                <h2></h2>
+            </div>
+        </div>
+        <div class="inf">
+            <div id="total">
+                <h2></h2>
+            </div>
+        </div>
+        <div class="inf" id="divApagar">
+            <button id="apagar"></button>
+        </div>
+    </div>
 
-
-    <div id="carrinho">
-    <button class="open-modal" data-modal="modal-1">
-        <span class="material-symbols-outlined">
-            shopping_cart_checkout
-        </span>
-    </button>
-
-    <dialog id="modal-1">
-        <button class="close-modal" data-modal="modal-1">
-            x
-        </button>
-    </dialog>
-</div>
-
-
-  <script async src="carrinho.js"></script>
+  <script async src="js/carrinho.js"></script>
 </html>

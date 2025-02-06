@@ -6,9 +6,37 @@
     <link rel="stylesheet" href="style.css">
     <script async src="scr.js"></script>
     <!DOCTYPE html>
-    <title>Carrinho de Compras</title>
+    <title>Sobre Nos</title>
 </head>
 <body>
+    <ul class="nav-itens">
+        <li>
+            <a href="home.html" class="menu">Home</a>
+        </li>
+        <li>
+            <a href="sobreNos.html" class="menu">Sobre Nós</a>
+        </li>
+    </ul>
+    <section class="sobreNos">
+        <h1>Sobre Nos</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem enim sapiente nihil iusto maiores amet cumque nobis aperiam nisi non, fugiat eligendi, itaque quod magnam, placeat voluptatum quia vel ut.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum aut sunt quam corrupti, temporibus repellat placeat corporis eius illo deserunt in labore ad optio, porro perspiciatis libero itaque sequi fugiat.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum aut sunt quam corrupti, temporibus repellat placeat corporis eius illo deserunt in labore ad optio, porro perspiciatis libero itaque sequi fugiat.</p>
+    </section>
 
+    <h2 class="promo">Receba Promoções</h2>
+    <section class="formulario">
+
+        <form action="contato" class="contato" id="contato">
+            <div class="row">
+                <input type="text" name="nome" id="inome" placeholder="Insira seu nome" required minlength="3" maxlength="55">
+                <input type="email" name="email" id="iemail" placeholder="insira seu email" required>
+            </div>
+            <div class="row">
+                <input type="tel" name="telefone" id="itelefone" placeholder="Insira seu telefone" required maxlength="11" minlength="9">
+                <input type="submit" value="Enviar">
+            </div>
+        </form>
+    </section>
 </body>
 </html>
