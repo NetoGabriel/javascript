@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
     <title>Home</title>
 </head>
@@ -18,7 +19,7 @@
                 </li>
             </ul>
             <div class="btn">
-                <a href="carrinho.html"><span class="material-symbols-outlined">shopping_cart_checkout</span></a> 
+                <a href="#" id="openPopup"><span class="material-symbols-outlined">shopping_cart_checkout</span></a> 
             </div>
         </nav>
         <section>
@@ -28,11 +29,16 @@
             </div>
         </section>
         <section>
-            <div class="imgPrincipal">
-                <img id="imgbtn" src="imagens/img_camisa2 - 2.jpg" alt="">
-                <p id="camisetaPreta">Camiseta Preta</p>
-            </div>
-        </section>
+            <section>
+                <div class="imgPrincipal">
+                    <img id="imgbtn" src="imagens/img_camiseta1 - 2.jpg" alt="">
+                    <div class="info">
+                        <p id="camisetaPreta">Camiseta Preta</p>
+                        <input type="number" name="quantidade" id="iquantidade" value="1" min="1">
+                        <button id="btnCarrinho">Adicionar ao carrinho</button>
+                    </div>
+                </div>
+            </section>
         <div class="modelos">
             <h2>Principais Modelos.</h2>
         </div>
@@ -79,6 +85,57 @@
             </div>
         </form>
     </section>
+
+    <!-- Pop-up do Carrinho -->
+    <div class="popup" id="popupCarrinho">
+        <div class="popup-content">
+            <span class="close" id="closePopup">&times;</span>
+            <h2>Carrinho de Compras</h2>
+            <div id="carrinhoItens"></div>
+            <div id="carrinhoTotal"></div>
+        </div>
+    </div>
+
     <script src="./js/home.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const popup = document.getElementById('popupCarrinho');
+            const closePopup = document.getElementById('closePopup');
+            const carrinhoBtn = document.getElementById('openPopup');
+            const carrinhoItens = document.getElementById('carrinhoItens');
+            const carrinhoTotal = document.getElementById('carrinhoTotal');
+
+            carrinhoBtn.addEventListener('click', function(event) {
+                event.preventDefault(); // Impede a navegação padrão
+                popup.style.display = 'block';
+                mostrarCarrinho();
+            });
+
+            closePopup.addEventListener('click', function() {
+                popup.style.display = 'none';
+            });
+
+            window.addEventListener('click', function(event) {
+                if (event.target == popup) {
+                    popup.style.display = 'none';
+                }
+            });
+
+            function mostrarCarrinho() {
+                const carrinho = JSON.parse(localStorage.getItem('array')) || [];
+                carrinhoItens.innerHTML = '';
+                let total = 0;
+
+                carrinho.forEach(item => {
+                    const itemDiv = document.createElement('div');
+                    itemDiv.innerHTML = `${item.nome} - Quantidade: ${item.quantidade} - Valor: R$${item.valor}`;
+                    carrinhoItens.appendChild(itemDiv);
+                    total += item.valor;
+                });
+
+                carrinhoTotal.innerHTML = `Total: R$${total}`;
+            }
+        });
+    </script>
 </body>
 </html>
