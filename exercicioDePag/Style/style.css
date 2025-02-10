@@ -1,13 +1,15 @@
 @charset "UTF-8";
 
 * {
+    font-family: Arial, Helvetica, sans-serif;
     margin: 0px;
     padding: 0px;
     box-sizing: border-box; /* Adicionado para incluir padding e border no tamanho total dos elementos */
 }
 
 body {
-    background-color: rgb(146,146,146);
+    background: linear-gradient(to bottom, rgb(4, 91, 99), rgb(3, 159, 170));
+    background-repeat: no-repeat;
     height: 100%;
     width: 100%;
 }
@@ -20,7 +22,6 @@ body {
 }
 
 .nav-itens {
-    background-color: rgb(102,102,102);
     display: flex;
     justify-content: center;
     list-style-type: none; /* Remove os marcadores de lista */
@@ -33,21 +34,27 @@ body {
 .nav-itens > li > a {
     padding: 10px;
     font-size: 1.5em;
+    border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.719);
     color: rgba(255, 255, 255, 0.664);
     text-decoration: none; /* Remove a sublinha dos links */
 }
 
 .btn {
-    background-color: rgb(102,102,102);
-    color: black;
+    color: rgba(255, 255, 255, 0.664);
     display: flex;
     flex-direction: row-reverse;
+    border-bottom: 3px solid black;
 }
 
 .btn > a {
-    color: black;
+    color: rgba(255, 255, 255, 0.664);
     text-decoration: none; /* Remove a sublinha dos links */
+}
+
+/* Estilos para o ícone do carrinho de compras */
+.btn > a > .material-symbols-outlined {
+    font-size: 2.3em; /* Ajuste o tamanho do ícone do carrinho de compras */
 }
 
 .apresentação {
@@ -55,43 +62,40 @@ body {
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    border: 1px solid black;
 }
 
 .apresentação > h1 {
-    font-size: 2.5em;
+    font-size: 3em;
+    color: rgb(0, 0, 0);
 }
 
 .apresentação > p {
-    font-size: 1.5em;
+    font-size: 2em;
+    color: black;
 }
 
 .imgPrincipal {
     display: flex;
     align-items: center; /* Centraliza verticalmente */
     justify-content: center; /* Centraliza horizontalmente */
-    text-align: left;
+    flex-direction: column;
+    text-align: center;
     height: auto; /* Ajusta a altura automaticamente */
     margin: 10px;
     padding: 10px;
     max-width: 100%; /* Garante que o contêiner não ultrapasse a largura da tela */
+    border-bottom: 1px solid black;
 }
 
 .imgPrincipal img {
-    width: 300px; /* Define a largura da imagem */
+    width: 400px; /* Define a largura da imagem */
     height: 300px; /* Define a altura da imagem */
     object-fit: cover; /* Mantém a proporção da imagem */
-    margin-right: 20px; /* Espaçamento entre a imagem e o texto */
+    border-radius: 15px;
 }
 
-.imgPrincipal .info {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Alinha os itens à esquerda */
-}
-
-.imgPrincipal .info p {
-    margin: 10px 0;
+.imgPrincipal .info h4, p {
+    padding: 5px;
     font-size: 1.5em;
 }
 
@@ -125,7 +129,7 @@ body {
 .imgPrincipal .info button {
     padding: 10px;
     background-color: #4CAF50;
-    color: white;
+    color: black;
     border: none;
     cursor: pointer;
 }
@@ -134,10 +138,16 @@ body {
     background-color: #45a049;
 }
 
+.modelos{
+    font-size: 2em;
+    color: black;
+}
+
 .cards {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap; /* Adicionado para permitir a quebra de linha das imagens */
 }
 
 .slots {
@@ -166,7 +176,6 @@ body {
     justify-content: center;
 }
 
-
 /* Estilos para o pop-up */
 .popup {
     display: none; /* Inicialmente oculto */
@@ -188,6 +197,7 @@ body {
     width: 80%;
     max-width: 600px;
     border-radius: 10px;
+    text-align: center; /* Centraliza o conteúdo */
 }
 
 .close {
@@ -202,4 +212,59 @@ body {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+#limparCarrinho {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #f44336; /* Cor de fundo vermelha */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#limparCarrinho:hover {
+    background-color: #d32f2f; /* Cor de fundo vermelha mais escura ao passar o mouse */
+}
+
+p, h4 {
+    color: white;
+}
+
+/* Estilos para o menu hambúrguer */
+.menu-hamburguer {
+    display: none;
+    cursor: pointer;
+    font-size: 2.5em; /* Ajuste o tamanho do ícone do menu hambúrguer */
+    color: rgba(255, 255, 255, 0.664);
+}
+
+
+
+/* Estilos responsivos */
+@media (max-width: 800px) {
+    .nav-itens {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-itens.show {
+        display: flex;
+    }
+
+    .menu-hamburguer {
+        display: block;
+    }
+
+    .btn {
+        flex-direction: row;
+    }
+
+    .slots img {
+        width: 100%; /* Ajusta a largura da imagem para 100% do contêiner */
+        height: auto; /* Ajusta a altura automaticamente */
+        object-fit: contain; /* Garante que a imagem seja redimensionada para caber no contêiner sem ser cortada */
+    }
 }

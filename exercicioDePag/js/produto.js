@@ -3,9 +3,15 @@ const valor = document.querySelector('#valor');
 const imgGrande = document.querySelector('#img4');
 
 window.addEventListener('load', e => {
-    roupa.innerHTML = localStorage.getItem('Nome');
-    const valorComCifrao = `R$ ${localStorage.getItem('Preço')}`;
-    valor.innerHTML = valorComCifrao;
+    const nomeProduto = localStorage.getItem('Nome');
+    const precoProduto = localStorage.getItem('Preço');
+
+    if (nomeProduto && precoProduto) {
+        roupa.innerHTML = nomeProduto;
+        valor.innerHTML = `R$ ${precoProduto}`;
+    } else {
+        console.error('Nome ou Preço do produto não encontrado no localStorage.');
+    }
 
     for (let i = 0; i < 3; i++) {
         let imag = document.getElementById('img' + (i + 1));
@@ -17,13 +23,19 @@ window.addEventListener('load', e => {
 });
 
 let grandona = window.localStorage.getItem('img4');
+if (grandona) {
+    imgGrande.src = grandona;
+}
+
 for (let i = 0; i < 3; i++) {
     let imagem = document.getElementById('img' + (i + 1));
     if (imagem) {
         imagem.addEventListener('click', e => {
+            let tempSrc = imgGrande.src;
             imgGrande.src = imagem.src;
-            imagem.src = grandona;
+            imagem.src = tempSrc;
             grandona = imgGrande.src;
+            localStorage.setItem('img4', grandona);
         });
     }
 }

@@ -13,10 +13,10 @@ class Roupas {
     }
 }
 
-const roupas1 = new Roupas('Camiseta Preta', 100, ['img/camisetaPreta.jpg'], 1);
-const roupas2 = new Roupas('Moleton Branco', 200, ['img/moletonBranco.jpg'], 2);
-const roupas3 = new Roupas('Calça Jeans', 150, ['img/calçaJeans.jpg'], 3);
-const roupas4 = new Roupas('Moletom Preto', 200, ['img/moletomPreto.jpg'], 4);
+const roupas1 = new Roupas('Camiseta Preta', 100, ['imagens/img_camiseta1 - 2.jpg'], 1);
+const roupas2 = new Roupas('Moleton Branco', 200, ['imagens/img_camisa_manga_longa - 3.jpg'], 2);
+const roupas3 = new Roupas('Calça Jeans', 150, ['imagens/img_camiseta - 3.jpg'], 3);
+const roupas4 = new Roupas('Moletom Preto', 110, ['imagens/img_Moleton - 2.jpg'], 4);
 
 const btn1 = document.getElementById('btn1');
 if (btn1) {
@@ -69,6 +69,7 @@ if (btn4) {
         }
     });
 }
+
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('contato');
 
@@ -85,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
             telefone: telefone
         };
 
-        fetch('https://apigenerator.dronahq.com/api/72BE1GmG/SiteDev', {
+        fetch('https://apigenerator.dronahq.com/api/2Aapz5OY/SiteDev', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -102,4 +103,56 @@ document.addEventListener('DOMContentLoaded', function() {
             // Aqui você pode adicionar código para lidar com erros
         });
     });
+});
+
+// pop-up
+document.addEventListener('DOMContentLoaded', function() {
+    const menuHamburguer = document.getElementById('menuHamburguer');
+    const navItens = document.getElementById('navItens');
+    const popup = document.getElementById('popupCarrinho');
+    const closePopup = document.getElementById('closePopup');
+    const carrinhoBtn = document.getElementById('openPopup');
+    const carrinhoItens = document.getElementById('carrinhoItens');
+    const carrinhoTotal = document.getElementById('carrinhoTotal');
+    const limparCarrinhoBtn = document.getElementById('limparCarrinho');
+
+    menuHamburguer.addEventListener('click', function() {
+        navItens.classList.toggle('show');
+    });
+
+    carrinhoBtn.addEventListener('click', function(event) {
+        event.preventDefault(); // Impede a navegação padrão
+        popup.style.display = 'block';
+        mostrarCarrinho();
+    });
+
+    closePopup.addEventListener('click', function() {
+        popup.style.display = 'none';
+    });
+
+    window.addEventListener('click', function(event) {
+        if (event.target == popup) {
+            popup.style.display = 'none';
+        }
+    });
+
+    limparCarrinhoBtn.addEventListener('click', function() {
+        localStorage.removeItem('array');
+        mostrarCarrinho();
+    });
+
+    function mostrarCarrinho() {
+        const carrinho = JSON.parse(localStorage.getItem('array')) || [];
+        carrinhoItens.innerHTML = '';
+        let total = 0;
+
+        carrinho.forEach(item => {
+            const itemDiv = document.createElement('div');
+            itemDiv.innerHTML = `${item.nome} - Quantidade: ${item.quantidade} - Valor: R$${item.valor}`;
+            carrinhoItens.appendChild(itemDiv);
+            total += item.valor;
+        });
+
+        carrinhoTotal.innerHTML = `Total: R$${total}`;
+    }
 });
