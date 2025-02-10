@@ -8,7 +8,7 @@
 }
 
 body {
-    background: linear-gradient(to bottom, rgb(4, 91, 99), rgb(3, 159, 170));
+    background: linear-gradient(to bottom, rgb(3, 72, 78), rgb(4, 122, 131));
     background-repeat: no-repeat;
     height: 100%;
     width: 100%;
@@ -25,6 +25,7 @@ body {
     display: flex;
     justify-content: center;
     list-style-type: none; /* Remove os marcadores de lista */
+    background: linear-gradient(to bottom, rgb(4, 91, 99), rgb(3, 159, 170));
 }
 
 .nav-itens > li {
@@ -45,10 +46,11 @@ body {
     display: flex;
     flex-direction: row-reverse;
     border-bottom: 3px solid black;
+    background: linear-gradient(to bottom, rgb(3, 159, 170),rgb(3, 72, 78) );
 }
 
 .btn > a {
-    color: rgba(255, 255, 255, 0.664);
+    color:black;
     text-decoration: none; /* Remove a sublinha dos links */
 }
 
@@ -78,8 +80,7 @@ body {
     display: flex;
     align-items: center; /* Centraliza verticalmente */
     justify-content: center; /* Centraliza horizontalmente */
-    flex-direction: column;
-    text-align: center;
+    text-align: left;
     height: auto; /* Ajusta a altura automaticamente */
     margin: 10px;
     padding: 10px;
@@ -87,16 +88,29 @@ body {
     border-bottom: 1px solid black;
 }
 
+.imgPrincipal #btn1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .imgPrincipal img {
-    width: 400px; /* Define a largura da imagem */
+    width: 50vw; /* Define a largura da imagem */
     height: 300px; /* Define a altura da imagem */
     object-fit: cover; /* Mantém a proporção da imagem */
     border-radius: 15px;
 }
 
-.imgPrincipal .info h4, p {
+.imgPrincipal .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.imgPrincipal .info h4, .imgPrincipal .info p {
     padding: 5px;
-    font-size: 1.5em;
+    font-size: 1em; /* Diminui o tamanho do texto */
 }
 
 .imgPrincipal .info input[type="number"] {
@@ -138,7 +152,7 @@ body {
     background-color: #45a049;
 }
 
-.modelos{
+.modelos {
     font-size: 2em;
     color: black;
 }
@@ -228,6 +242,15 @@ body {
     background-color: #d32f2f; /* Cor de fundo vermelha mais escura ao passar o mouse */
 }
 
+.informacoes{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+
+}
+
+
 p, h4 {
     color: white;
 }
@@ -239,8 +262,6 @@ p, h4 {
     font-size: 2.5em; /* Ajuste o tamanho do ícone do menu hambúrguer */
     color: rgba(255, 255, 255, 0.664);
 }
-
-
 
 /* Estilos responsivos */
 @media (max-width: 800px) {
