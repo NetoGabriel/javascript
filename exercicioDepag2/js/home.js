@@ -18,55 +18,91 @@ const roupas2 = new Roupas('Moleton Branco', 200, ['imagens/img_camisa_manga_lon
 const roupas3 = new Roupas('Calça Jeans', 150, ['imagens/img_camiseta - 3.jpg'], 3);
 const roupas4 = new Roupas('Moletom Preto', 110, ['imagens/img_Moleton - 2.jpg'], 4);
 
+function trocarImagens(produto, btnId) {
+    const imgPrincipal = document.querySelector('.imgPrincipal');
+    const imgClicadaContainer = document.getElementById(btnId);
+    const imgClicada = imgClicadaContainer.querySelector('img');
+    const imgPrincipalImg = imgPrincipal.querySelector('img');
+
+    // Trocar a imagem principal com a imagem clicada
+    const tempSrc = imgPrincipalImg.src;
+    imgPrincipalImg.src = imgClicada.src;
+    imgClicada.src = tempSrc;
+
+    // Trocar as informações do produto
+    const tempNome = imgPrincipal.querySelector('h4').textContent;
+    const tempPreco = imgPrincipal.querySelector('p').textContent;
+
+    imgPrincipal.querySelector('h4').textContent = produto.Produto;
+    imgPrincipal.querySelector('p').textContent = `R$${produto.Roupas}`;
+
+    imgClicadaContainer.querySelector('h4').textContent = tempNome;
+    imgClicadaContainer.querySelector('p').textContent = tempPreco;
+
+    // Adicionar o botão de adicionar ao carrinho
+    const infoDiv = imgPrincipal.querySelector('.info');
+    infoDiv.innerHTML = `
+        <h4 id="camisetaPreta">${produto.Produto}</h4>
+        <p>R$${produto.Roupas}</p>
+        <input type="number" name="quantidade" id="iquantidade" value="1" min="1">
+        <button id="btnCarrinho">Adicionar ao carrinho</button>
+    `;
+
+    document.getElementById('btnCarrinho').addEventListener('click', function() {
+        adicionarAoCarrinho(produto);
+    });
+}
+
+function adicionarAoCarrinho(produto) {
+    const quantidade = parseInt(document.getElementById('iquantidade').value);
+    const carrinho = JSON.parse(localStorage.getItem('array')) || [];
+    const itemExistente = carrinho.find(item => item.id === produto.Id);
+
+    if (itemExistente) {
+        itemExistente.quantidade += quantidade;
+    } else {
+        carrinho.push({
+            id: produto.Id,
+            nome: produto.Produto,
+            valor: produto.Roupas,
+            imagem: produto.Img[0],
+            quantidade: quantidade
+        });
+    }
+
+    localStorage.setItem('array', JSON.stringify(carrinho));
+    alert('Produto adicionado ao carrinho!');
+}
+
 const btn1 = document.getElementById('btn1');
 if (btn1) {
-    btn1.addEventListener('click', () => {
-        window.location.replace('produtos.html');
-        window.localStorage.setItem('Nome', roupas1.Produto);
-        window.localStorage.setItem('Preço', roupas1.Roupas);
-        window.localStorage.setItem('id', roupas1.Id);
-        for (let i = 0; i < roupas1.Img.length; i++) {
-            window.localStorage.setItem('img' + (i + 1), roupas1.Img[i]);
-        }
+    btn1.addEventListener('click', (event) => {
+        event.preventDefault();
+        trocarImagens(roupas1, 'btn1');
     });
 }
 
 const btn2 = document.getElementById('btn2');
 if (btn2) {
-    btn2.addEventListener('click', () => {
-        window.location.replace('produtos.html');
-        window.localStorage.setItem('Nome', roupas2.Produto);
-        window.localStorage.setItem('Preço', roupas2.Roupas);
-        window.localStorage.setItem('id', roupas2.Id);
-        for (let i = 0; i < roupas2.Img.length; i++) {
-            window.localStorage.setItem('img' + (i + 1), roupas2.Img[i]);
-        }
+    btn2.addEventListener('click', (event) => {
+        event.preventDefault();
+        trocarImagens(roupas2, 'btn2');
     });
 }
 
 const btn3 = document.getElementById('btn3');
 if (btn3) {
-    btn3.addEventListener('click', () => {
-        window.location.replace('produtos.html');
-        window.localStorage.setItem('Nome', roupas3.Produto);
-        window.localStorage.setItem('Preço', roupas3.Roupas);
-        window.localStorage.setItem('id', roupas3.Id);
-        for (let i = 0; i < roupas3.Img.length; i++) {
-            window.localStorage.setItem('img' + (i + 1), roupas3.Img[i]);
-        }
+    btn3.addEventListener('click', (event) => {
+        event.preventDefault();
+        trocarImagens(roupas3, 'btn3');
     });
 }
 
 const btn4 = document.getElementById('btn4');
 if (btn4) {
-    btn4.addEventListener('click', () => {
-        window.location.replace('produtos.html');
-        window.localStorage.setItem('Nome', roupas4.Produto);
-        window.localStorage.setItem('Preço', roupas4.Roupas);
-        window.localStorage.setItem('id', roupas4.Id);
-        for (let i = 0; i < roupas4.Img.length; i++) {
-            window.localStorage.setItem('img' + (i + 1), roupas4.Img[i]);
-        }
+    btn4.addEventListener('click', (event) => {
+        event.preventDefault();
+        trocarImagens(roupas4, 'btn4');
     });
 }
 
