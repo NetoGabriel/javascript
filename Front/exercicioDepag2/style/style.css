@@ -246,9 +246,7 @@ body {
     background-color: gray;
     display: flex;
     flex-direction: column;
-    justify-content: end;
-    text-align: end;
-    border: black;
+    border: 1px solid black;
 }
 
 .informacoes {
