@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Passion+One:wght@400;700;900&family=Sriracha&display=swap" rel="stylesheet">
+    <title>Projeto</title>
+</head>
+<body>
+
+    <header>
+        <div class="logo"> DevStyle_Modal </div>
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>Produtos</li>
+                <li>Contatos</li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="tech-circle">
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+
+        <div class="list">
+            <div class="item active">
+                <div class="product-img">
+                    <img src="img/img_camiseta1_-_2-removebg-preview.png" alt="Camiseta Preta">
+                </div>
+                <div class="content">
+                    <p class="product-tag">Novo Lançamento</p>
+                    <p class="product-name">Camiseta Preta</p>
+                    <p class="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum similique voluptatum eligendi alias? Sapiente corporis, quidem iusto at eligendi distinctio odio magnam, mollitia, odit error reprehenderit aliquam. Iusto, ea porro!</p>
+                    <button class="btn">Saiba Mais</button>
+                </div>
+            </div>
+            <div class="item ">
+                <div class="product-img">
+                    <img src="img/img_Moleton_-_2-removebg-preview.png" alt="Moletom Preto">
+                </div>
+                <div class="content">
+                    <p class="product-tag">Novo Lançamento</p>
+                    <p class="product-name">Moletom Preto</p>
+                    <p class="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum similique voluptatum eligendi alias? Sapiente corporis, quidem iusto at eligendi distinctio odio magnam, mollitia, odit error reprehenderit aliquam. Iusto, ea porro!</p>
+                    <button class="btn">Saiba Mais</button>
+                </div>
+            </div>
+            <div class="item ">
+                <div class="product-img">
+                    <img src="img/img_camisa_manga_longa_-_3-removebg-preview.png" alt="Motelo Branco">
+                </div>
+                <div class="content">
+                    <p class="product-tag">Novo Lançamento</p>
+                    <p class="product-name">Motelo Branco</p>
+                    <p class="description">Lorem ipsum  , dolor sit amet consectetur adipisicing elit. Dolorum similique voluptatum eligendi alias? Sapiente corporis, quidem iusto at eligendi distinctio odio magnam, mollitia, odit error reprehenderit aliquam. Iusto, ea porro!</p>
+                    <button class="btn">Saiba Mais</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="arrows">
+            <button class="arrows-btn" id="prev"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+              </svg>
+            </button>
+            <button class="arrows-btn" id="next"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"/>
+              </svg>
+            </button>
+        </div>
+        <div class="indicator">
+            <div class="numbers">01</div>
+            <div class="dots">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+
+        </div>
+
+    </main>
+        
+    <script src="script.js"></script>
+</body>
+</html>
